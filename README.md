@@ -1,4 +1,4 @@
-<h2>Webpack</h2><br>
+<h2>Webpack</h2>
     Babel<br>
     Scss<br>
     Eslint<br>
@@ -7,4 +7,4 @@
         Dev Server, SourceMaps, Eslint, Not Minified JS & CSS<br>
       - Production<br>
         Minified Code<br>
-<h2>Git</h2><br>
+<h2>Git</h2>

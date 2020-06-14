@@ -8,3 +8,8 @@ Webpack
       - Production
         Minified Code
 Git
+
+    Production
+      1.0.0
+    Development
+      1.0.0

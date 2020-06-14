@@ -51,8 +51,8 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: 'index.html',
       minify: {
-        removeComments: isProd, // удаление комментариев из кода
-        collapseWhitespace: isProd // удаление пробелов из кода (только в продакшн)
+        removeComments: isProd,
+        collapseWhitespace: isProd
       }
     }),
     new CopyPlugin([

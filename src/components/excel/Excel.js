@@ -12,7 +12,7 @@ export class Excel {
     // перебор классов
     this.components.forEach(Component => {
       const component = new Component(); // создаем инстансы
-      $root.insertAdjacentHTML('beforeend', component.toHTML())
+      $root.insertAdjacentHTML('beforeend', component.toHTML()) // toHTML method присутствует у каждого компонента (ибо они наследованы от ExcelComponent)
     })
 
     return $root

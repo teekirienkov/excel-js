@@ -20,9 +20,6 @@ const jsLoaders = () => {
     }
   ]
 
-  if (isDev) {
-    loaders.push('eslint-loader')
-  }
 
   return loaders
 }
@@ -50,7 +47,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: 'index.html',
+      template: './index.html',
       minify: {
         removeComments: isProd,
         collapseWhitespace: isProd

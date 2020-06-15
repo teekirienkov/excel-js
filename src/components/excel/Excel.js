@@ -8,11 +8,18 @@ export class Excel {
 
   getRoot() {
     const $root = document.createElement('div');
+    $root.classList.add('excel');
 
     // перебор классов
     this.components.forEach(Component => {
-      const component = new Component(); // создаем инстансы
-      $root.insertAdjacentHTML('beforeend', component.toHTML()) // toHTML method присутствует у каждого компонента (ибо они наследованы от ExcelComponent)
+      const $el = document.createElement('div');
+
+      $el.classList.add(Component.className); // static method
+
+      const component = new Component($el); // создаем инстансы
+
+      $el.innerHTML = component.toHTML(); // method toHTML присутствует у каждого класса компонентов
+      $root.append($el);
     })
 
     return $root

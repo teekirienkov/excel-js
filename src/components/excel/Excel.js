@@ -1,24 +1,24 @@
 // global component Excel
+import {native} from "@core/dom";
 
 export class Excel {
   constructor(selector, options) {
-    this.$el = document.querySelector(selector);
-    this.components = options.components || [];
+    this.$el = native(selector)
+    this.components = options.components || []
   }
 
   getRoot() {
-    const $root = document.createElement('div');
-    $root.classList.add('excel');
+    const $root = native.create('div', 'excel');
 
     // перебор классов
     this.components.forEach(Component => {
-      const $el = document.createElement('div');
-
-      $el.classList.add(Component.className); // static method
+      // const $el = document.createElement('div');
+      // $el.classList.add(Component.className); // static method
+      const $el = native.create('div', Component.className)
 
       const component = new Component($el); // создаем инстансы
 
-      $el.innerHTML = component.toHTML(); // method toHTML присутствует у каждого класса компонентов
+      $el.html(component.toHTML()); // method toHTML присутствует у каждого класса компонентов
       $root.append($el);
     })
 
